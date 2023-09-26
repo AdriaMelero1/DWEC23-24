@@ -1,0 +1,102 @@
+body{
+    background-color: tomato;
+    font-family: monospace;
+    margin: 0px;
+}
+
+#title{
+    width: 100%;
+    height: auto;
+    background-color: rgb(131, 0, 0);
+    font-size: 50px;
+    color: aliceblue;
+}
+
+h1{
+    text-align: center;
+    margin-top: 0px;
+}
+
+h1:hover{
+    color: rgb(131, 0, 0);
+    background-color: black;
+}
+
+
+
+h2{
+    background-color: rgba(243, 238, 98, 0.582);
+    padding: 10px;
+    color: rgb(0, 66, 123);
+    text-align: center;
+    width: 50%;
+    margin: 0px;
+    text-decoration: none;
+}
+a{
+    padding: 10px;
+    color: rgb(0, 66, 123);
+    text-align: center;
+    width: 50%;
+    margin: 0px;
+    text-decoration: none;
+}
+
+#dos{
+    color: rgb(104, 66, 1);
+}
+
+h2:hover{
+    background-color: rgba(180, 243, 98, 0.582);
+    color: black;
+    width: 80%;
+}
+
+#dos:hover{
+    background-color: rgba(180, 243, 98, 0.582);
+    color: black;
+}
+
+#back{
+    text-align: center;
+    background-color: transparent;
+    width: 100%;
+}
+
+#back:hover{
+    text-align: center;
+    background-color: transparent;
+    width: 100%;
+    color: aliceblue;
+}
+
+#backdiv{
+    background-color: rgba(180, 243, 98, 0.582);
+}
+
+
+
+#backdiv:hover{
+    background-color: rgba(125, 183, 49, 0.582);
+    position: relative;
+    width: 100%;
+}
+
+
+
+#subtitle{
+    background-color: rgba(243, 197, 98, 0.582);
+    display: flex;
+    width: 100%;
+    margin: 0px;
+    margin-bottom: 50px;
+    font-size: 35px;
+}
+
+p{
+    float: left;
+    background-color: rgba(123, 0, 0, 0.371);
+    padding: 10px;
+    color: aliceblue;
+    font-size: 25px;
+}
