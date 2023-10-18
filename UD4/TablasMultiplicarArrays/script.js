@@ -18,7 +18,7 @@ for(let fila = 0; fila < tabla.length; fila++){
         tabla[fila][col] = fila * col;
         //Imprimim les tables de multiplicar si el resultat es impar
         if(tabla[fila][col] % 2 != 0){
-            console.log(fila," * ", col, " = ", tabla[fila][col]);
+            console.log(fila + " * " + col, " = ", tabla[fila][col]);
         }
     }
 }

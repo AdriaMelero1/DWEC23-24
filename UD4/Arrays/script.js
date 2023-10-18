@@ -114,7 +114,7 @@ console.log(vocales); */
 //ARRAYS MULTIDIMENSIONALES
 
 
-let tabla = new Array(10);
+/* let tabla = new Array(10);
 
 for(let i = 0; i < tabla.length; i++) {
     tabla[i] = new Array(5);
@@ -126,4 +126,29 @@ for(let fila = 0; fila < tabla.length; fila++){
     }
 }
 
-console.log(tabla);
+console.log(tabla); */
+
+
+//ARRAYS pop() elimina ultimo elemento de array y lo devuelve la
+
+let nombres = ['paco', 'joan', 'esther'];
+let nombres2 = ['maria', 'joana'];
+/* let nnombres = ['paco', 'joan', 'esther'];
+
+let x = nombres.concat(nnombres);
+console.log(x);
+ */
+//console.log(nombres.pop());
+
+//shift() elimina el primer elemento y lo devuelve
+//unshift() agrega uno o mas elementos al principio
+//concat() combina dos arrays y devuelve el resultado
+//slice() devuelve una copia superficial de una porcion del array   let copiaNombres = nombres.slice(0,1);
+//splice() copia el contenido del array eliminando, agregando o reemplazando elementos nombres.splice(1,1, ...nombres2);
+//indexOf() Devuelve el primer indice en el que se encuentra un elemento dado. Devuelve -1 si no lo encuentra
+//join() une todos los elementos de un arrayen una cadena (utilizando un separador)  let cadena = nombres.join(' -- ',nombres2);
+//sort() Ordena los elementos de un array alfabetica o numericamente
+
+
+console.log(cadena);
+
