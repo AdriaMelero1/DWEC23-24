@@ -1,97 +1,56 @@
-//Objetos
 
-/* let unCliente = {
-    nombre: "Joan",
-    apellido: "Pons",
-    "direccion Fiscal": "c/ Desconocida",
-    "+-+-+-+": "lasdadsl",
-    pago: {
-        cantidad: 35,
-        tipo: "Tarjeta"
-    },
-    diHola: function(){
-        return "hola";
-    },
-    notas: [7, 10, 5, 8],
-    calcularMedia: function(){
-        let media = 0;
-        for(let i = 0; i < this.notas.length; i++){
-            media += this.notas[i];
-        }
-        console.log(this.nombre, " tiene una media de ", (media / this.notas.length));
+//Clase planeta amb constructor
+class Planeta{
+    constructor(nombre, distanciaSol, tamanyoRelativo, fechaDescubrimiento){
+        this.nombre = nombre;
+        this.distanciaSol = distanciaSol;
+        this.tamanyoRelativo = tamanyoRelativo;
+        this.fechaDescubrimiento = fechaDescubrimiento;
+    }
+
+    //Metode per imprimir informació d'un plneta
+    info(){
+        console.log(`
+        Planeta: ${this.nombre}
+        Distancia al sol (millones de km): ${this.distanciaSol}
+        Tamaño relativo a la tierra: ${this.tamanyoRelativo}
+        Fecha de descubrimiento: ${this.fechaDescubrimiento}
+        `);
     }
 }
 
-unCliente.calcularMedia();
+//Arrays amb informacio
+const arrNombres = ["Mercurio", "Venus", "Tierra", "Marte", "Jupiter", "Saturno"];
+const arrDistancias = [57.9,108.2, 149.6, 227.9, 778.3, 1427.0];
+const arrTamanyos = [0.38, 0.95, 1, 0.53, 11.21, 9.45];
+const arrFechaDescubrimiento = ["265 A.C.", "1610 D.C", "1494 D.C", "1610 D.C","1610 D.C","1610 D.C"];
+
+//Array on guardare tots els planetes
+const arrPlanetas = [];
 
 
-unCliente.diAdios = function() {
-    console.log("Adioss");
+//For amb tantes iteracions com noms al array de noms, per cada iteració guarda un nou 
+for(let i = 0; i < arrNombres.length; i++){
+    arrPlanetas[i] = new Planeta(arrNombres[i], arrDistancias[i], arrTamanyos[i], arrFechaDescubrimiento[i]);
 }
 
-unCliente.diAdios(); */
-
-
-
-
-//Constructores
-
-/* function Web() {
-    this.url = "http://www.google.es";
-    this.nombre = "localhost";
-
-    this.muestraInformacion = function () {
-        return this.url + this.nombre;
-    }
+//Cambiam l'ordre del array per veure la diferencia amb el sort
+arrPlanetas.reverse();
+//Imprimim la info de tots els planetes
+for(let i = 0; i < arrPlanetas.length; i++){
+    arrPlanetas[i].info();
 }
 
+console.log("-----------------------------");
 
-let otraWeb = new Web();
-
-console.log(otraWeb.muestraInformacion());
-
-otraWeb.visitas = 2;
-
-console.log(otraWeb);
-
-Web.miFuncion = new function(){
-    
-} */
+//Ordenam l'array per la distancia al sol de menor a major amb array.sort()
+arrPlanetas.sort(function(a,b){return a.distanciaSol - b.distanciaSol});
 
 
-//Constructor planetas
-function Planeta(nom, distanciaSol, tamanyoRetalivo, fechaDescubrimiento) {
-    this.nom = nom;
-    this.distanciaSol = distanciaSol, //Millons de km
-    this.tamanyoRetalivo = tamanyoRetalivo,
-    this.fechaDescubrimiento = fechaDescubrimiento,
-    info = function(){
-       return "Planeta: " + this.nom + "\nDistancia al sol (millons de km): " + this.distanciaSol + 
-       "\nTamany relatiu a la terra: " + this.tamanyoRetalivo + "\nFecha descubriment: " + this.fechaDescubrimiento;
-    }
-
+//Tornam a imprimir l'array ordenat
+for(let i = 0; i < arrPlanetas.length; i++){
+    arrPlanetas[i].info();
 }
 
-//Arrays planetas
-let arrMercurio = ["Mercurio", 57.9, 0.38, "265 A.C."]
-let arrVenus = ["Venus", 108.2, 0.95, "1610 D.C."];
-let arrTierra = ["Tierra", 149.6, 1, "1494 D.C."]; //Se descubrio que era redonda
-let arrMarte = ["Marte", 227.9, 0.53, "1610 D.C."];
-let arrJupiter = ["Jupiter", 778.3, 11.21, "1610 D.C."];
-let arrSaturno = ["Saturno", 1427.0, 9.45, "1610 D.C."];
-
-let arrPlanetas = [arrMercurio, arrVenus, arrTierra, arrMarte, arrJupiter, arrSaturno];
-
-console.log(arrPlanetas.length);
-
-for (let i = 0; i < arrPlanetas.length; i++) {
-    switch (i){
-        case 0:
-            let mercurio = new Planeta(arrMercurio[0], arrMercurio[1], arrMercurio[2], arrMercurio[3]);
-            console.log(mercurio);
-
-            break;
-    }
-}
-
-console.log(mercurio);
+//Imprimim la data de avui amb Date().
+console.log("Hoy estamos a dia ", Date());
