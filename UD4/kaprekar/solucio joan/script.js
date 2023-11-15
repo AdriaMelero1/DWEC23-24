@@ -7,8 +7,7 @@ let numero;
 //Pedimos un numero al usuario y lo capturamos (sera una cadena (String))
 const promptText = "Elija cualquier numero de 4 digito que este formado por al menos dos digitos diferentes, incluido el cero.";
 //Lanzamos prompt
-//numero = prompt(promptText);
-numero = "1324";
+numero = prompt(promptText);
 
 if(!validaNumero(numero)) {
     console.log("El numero introducido no es valido");
@@ -48,17 +47,7 @@ function kaprekar(numero) {
     let mayor, menor;
 
 
-
     //Añadimos el numero al array
-
-            /*     for(let i = 0; i < numero.length(); i++){
-                    arrNumero[i] = numero[i];
-                } */
-
-            /*     for(let i = 0; i < numero.length(); i++){
-                    arrNumero[i] = numero.charAt(i);
-                } */
-
     for(let i = 0; i < numero.length; i++){
         arrNumero.push(numero.charAt(i));
     }
@@ -70,7 +59,6 @@ function kaprekar(numero) {
     menor = uneDigitos(arrNumero);
 
     //Le damos la vuelta al array
-    //arrNumero.reverse();
     arrNumero = daleLaVuelta(arrNumero);
 
     //Guardamos en la variable mayor el contenido del arrNumero girado
@@ -81,14 +69,13 @@ function kaprekar(numero) {
 
     console.log(mayor + " - " + menor + " = " + numero);
 
-    //return formateaNumeroACuatroDigitos(numero.toString(), true);
+    return formateaNumeroACuatroDigitos(numero.toString(), true);
     
 }
 
 /* 
     Esta funcion devuelve una cadena formada por los elementos del array pasado parametro, 
     tomados como caracteres desde el de menor indice hasta el ultimo
-
 */
 function uneDigitos(arrNumero) {
 
