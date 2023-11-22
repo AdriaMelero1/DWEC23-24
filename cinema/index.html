@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>CINEMA</title>
 </head>
+
 <body>
     <div class="movie-container">
         <label>Choose a movie</label>
@@ -31,7 +33,11 @@
         </li>
     </ul>
     <div class="container">
-        <div class="screen"></div>
+
+        <video preload="true" autoplay="autoplay" loop volume="0" poster="pic.jpg" class="fillWidth">
+            <source src="video.mp4">
+        </video>
+
         <div class="row">
             <div class="seat occupied"></div>
             <div class="seat"></div>
@@ -86,4 +92,5 @@
     <p class="text">Has choosen <span id="counter">0</span> seats for a price of <span id="total"> 0 </span>€</p>
     <script src="cine.js"></script>
 </body>
+
 </html>

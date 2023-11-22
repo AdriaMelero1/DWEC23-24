@@ -98,9 +98,8 @@ body{
     margin-left: 2px;
 }
 
-.screen{
-    background-color: #e1c88a;
-    height: 140px;
+video{
+    height: 210px;
     width: 100%;
     margin: 40px 0;
     transform: rotateX(-45deg);

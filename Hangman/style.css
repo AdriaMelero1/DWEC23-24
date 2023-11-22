@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Oswald&family=Raleway&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Raleway', sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: black;
+	color: white;
+	padding: 50px;
+}
+
+main {
+	border: 3px solid white;
+	padding: 100px;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.alphabet{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px;
+	border: 1px solid red;
+	margin-top: 20px;
+}
+
+.row{
+	display: flex;
+}
+
+.letter {
+	padding: 10px;
+	margin: 5px;
+	border: 1px solid white;
+	width: 40px;
+	text-align: center;
+}
