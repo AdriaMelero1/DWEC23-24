@@ -6,21 +6,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>the Hangman</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="icon.png" type="image/x-icon">
 </head>
 
 <body>
 	<main>
 		<h1>the Hangman</h1>
-		<p class="text">You have <span id="lives-left">7</span> lives left<span id="total"> 0 </span>€</p>
-		<span class="word">-</span>
+		<p class="text">You have <span id="lives-left">7</span> lives left</p>
+		<span id="secretWord">-</span>
 		<div class="alphabet">
 			<div class="row">
-				<div class="letter">Q</div>
+				<div class="letter contained">Q</div>
 				<div class="letter">W</div>
 				<div class="letter">E</div>
 				<div class="letter">R</div>
 				<div class="letter">T</div>
-				<div class="letter">Y</div>
+				<div class="letter not-contained">Y</div>
 				<div class="letter">U</div>
 				<div class="letter">I</div>
 				<div class="letter">O</div>
@@ -48,11 +49,14 @@
 				<div class="letter">M</div>
 			</div>
 		</div>
+		<p class="text">You did <span id="fails">0</span> fails</p>
 		<div class="timer">
-
+			<p>00:00:00</p>
 		</div>
 	</main>
 
+
+	<script src="script.js"></script>
 </body>
 
 </html>

@@ -16,10 +16,24 @@ body{
 	padding: 50px;
 }
 
+h1{
+	margin-bottom: 20px;
+}
+
+p{
+	margin: 5px;
+	font-size: 20px;
+}
+
+.text span{
+	color: red;
+}
+
 main {
 	border: 3px solid white;
-	padding: 100px;
+	padding: 50px 50px 50px 50px;
 	width: 80%;
+	min-width: 600px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -32,6 +46,8 @@ main {
 	padding: 20px;
 	border: 1px solid red;
 	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 550px;
 }
 
 .row{
@@ -44,4 +60,32 @@ main {
 	border: 1px solid white;
 	width: 40px;
 	text-align: center;
+}
+
+.letter:hover {
+	font-weight: 800;
+	border: 1px solid red;
+	color: red;
+	background-color: white;
+	cursor: pointer;
+}
+
+.letter.contained{
+	background-color: rgb(166, 255, 76);
+	color: black;
+}
+
+.letter.not-contained{
+	background-color: rgb(255, 86, 86);
+	color: black;
+}
+
+.letter.contained:hover, .letter.not-contained:hover {
+	border: 1px solid white;
+	font-weight: initial;
+}
+
+#secretWord{
+	padding: 50px 0 20px 0;
+	font-size: 40px;
 }

@@ -4,12 +4,19 @@ const availableSeats = document.querySelectorAll('.row .seat:not(.occupied)');
 const counter = document.getElementById('counter');
 const total = document.getElementById('total');
 const selectedMovie = document.getElementById('movie');
+const videosrc = document.getElementById('m');
 
 //Price of the movie
 let ticketPrice = +selectedMovie.value;
 
 //Fill the UI
 fillUI();
+
+function updateScreen(movieClasses) {
+    videosrc.src = movieClasses[0] + ".mp4";
+    console.log(videosrc.src);
+    console.log(videosrc.classList);
+}
 
 
 /* FUNCTIONS */
@@ -26,7 +33,6 @@ function updateSeatsSelection() {
 
     const seatsIndex = [...selectedSeats].map((seat) => [...availableSeats].indexOf(seat));
 
-    console.log(seatsIndex);
 
     localStorage.setItem('selectedSeats', JSON.stringify(seatsIndex))
 
@@ -80,11 +86,12 @@ container.addEventListener('click', (e) => {
 selectedMovie.addEventListener('change', (e) => {
 
     ticketPrice = +e.target.value;
+    const selectedOption = e.target.options[e.target.selectedIndex];
+    const movieClasses = Array.from(selectedOption.classList);
 
-    localStorage.setItem('selectedMovieIndex', e.target.selectedIndex);
-    localStorage.setItem('selectedMoviePrice', e.target.value);
 
     updateSeatsSelection();
+    updateScreen(movieClasses);
 });
 
 updateSeatsSelection();
