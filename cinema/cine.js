@@ -1,10 +1,12 @@
 //Capture elements from DOM
 const container = document.querySelector('.container');
+const seats = document.querySelectorAll('.row .seat');
 const availableSeats = document.querySelectorAll('.row .seat:not(.occupied)');
 const counter = document.getElementById('counter');
 const total = document.getElementById('total');
 const selectedMovie = document.getElementById('movie');
 const videosrc = document.getElementById('m');
+const buy = document.getElementById('buy');
 
 //Price of the movie
 let ticketPrice = +selectedMovie.value;
@@ -23,7 +25,7 @@ function updateScreen(movieClasses) {
 function updateSeatsSelection() {
 
     selectedSeats = document.querySelectorAll('.row .seat.selected');
-
+    occupiedSeats = document.querySelectorAll('.row .seat.occupied');
     /*
     const seatsIndex = [...selectedSeats].map(function(seat) {
         return [...availableSeats].indexOf(seat);
@@ -32,9 +34,10 @@ function updateSeatsSelection() {
 
 
     const seatsIndex = [...selectedSeats].map((seat) => [...availableSeats].indexOf(seat));
+    const occupiedSeatsIndex = [...occupiedSeats].map((seat) => [...seats].indexOf(seat));
 
-
-    localStorage.setItem('selectedSeats', JSON.stringify(seatsIndex))
+    localStorage.setItem('selectedSeats', JSON.stringify(seatsIndex));
+    localStorage.setItem('occupiedSeats', JSON.stringify(occupiedSeatsIndex));
 
 
     const selectedSeatsCounter = selectedSeats.length;
@@ -44,6 +47,8 @@ function updateSeatsSelection() {
 
 function fillUI() {
     const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
+    const occupiedSeats = JSON.parse(localStorage.getItem('occupiedSeats'));
+
 
     if(selectedSeats != null && selectedSeats.length > 0){
 
@@ -54,6 +59,18 @@ function fillUI() {
         });
 
     }
+
+    if(occupiedSeats != null && occupiedSeats.length > 0){
+
+        seats.forEach((seat, occupiedSeatsIndex) => {
+            if(occupiedSeats.indexOf(occupiedSeatsIndex) > -1){
+                seat.classList.remove('selected');
+                seat.classList.add('occupied');
+            }
+        });
+    }
+
+
 
     const selectedMovieIndex = localStorage.getItem('selectedMovieIndex');
 
@@ -92,6 +109,19 @@ selectedMovie.addEventListener('change', (e) => {
 
     updateSeatsSelection();
     updateScreen(movieClasses);
+});
+
+
+buy.addEventListener('click', (e) =>{
+
+    seats.forEach( (e) => {
+        if(e.classList.contains('selected')){
+            e.classList.replace('selected','occupied');
+        }
+    });
+
+    updateSeatsSelection();
+
 });
 
 updateSeatsSelection();

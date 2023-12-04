@@ -87,7 +87,6 @@ form.addEventListener('submit', (e) => {
     
     checkPasswordsAreEqual(password, password2);
 
-    console.log(object);
 });
 
 
