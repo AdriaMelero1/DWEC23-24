@@ -11,14 +11,13 @@ const obtenerTodos = (miCallback, source) => {
 			const respuesta = JSON.parse(request.responseText);
 
 			respuesta.forEach((e) => {
-				div.innerText = e;
+				div.innerText += e;
 			});
 
 			miCallback(undefined, respuesta);
 
 		} else if (request.readyState === 4) {
 			miCallback("No se han podido obtener los datos", undefined);
-
 		}
 	});
 
